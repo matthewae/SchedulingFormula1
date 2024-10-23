@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="592.0" prefWidth="777.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sistempenjadwalanotomatisf1motgp.FXMLDocumentController">
+   <children>
+      <TabPane layoutY="76.0" prefHeight="516.0" prefWidth="777.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+            <Tab fx:id="viewtab" onSelectionChanged="#viewklik" text="View">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="234.0" prefWidth="616.0">
+                     <children>
+                        <TableView fx:id="viewtbv" prefHeight="386.0" prefWidth="777.0">
+                          <columns>
+                            <TableColumn fx:id="idv" prefWidth="38.0" text="Id" />
+                            <TableColumn fx:id="rnv" prefWidth="128.0" text="Race Name" />
+                              <TableColumn fx:id="lv" prefWidth="106.0" text="Location" />
+                              <TableColumn fx:id="rtv" prefWidth="92.0" text="Race Type" />
+                              <TableColumn fx:id="dv" prefWidth="54.0" text="Date" />
+                              <TableColumn fx:id="lcv" prefWidth="69.0" text="Lap Count" />
+                              <TableColumn fx:id="llv" prefWidth="74.0" text="Length" />
+                              <TableColumn fx:id="stv" prefWidth="96.0" text="Start Time" />
+                              <TableColumn fx:id="etv" prefWidth="99.0" text="End Time" />
+                          </columns>
+                        </TableView>
+                        <Button fx:id="selupbtn" layoutX="109.0" layoutY="403.0" mnemonicParsing="false" onAction="#selupklik" text="Select Update" />
+                        <Button fx:id="schedulebtn" layoutX="26.0" layoutY="403.0" mnemonicParsing="false" onAction="#schklik" text="Schedule" />
+                        <Button fx:id="exbtn" layoutX="214.0" layoutY="403.0" mnemonicParsing="false" onAction="#exitklik" text="Exit" />
+                     </children></AnchorPane>
+              </content>
+            </Tab>
+          <Tab fx:id="instab" onSelectionChanged="#insklik" text="Insert">
+               <content>
+                  <GridPane alignment="CENTER">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="356.0" minWidth="10.0" prefWidth="15.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="356.0" minWidth="10.0" prefWidth="98.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="588.0" minWidth="10.0" prefWidth="192.0" />
+                        <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" maxWidth="588.0" minWidth="8.0" prefWidth="8.0" />
+                        <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" maxWidth="588.0" minWidth="10.0" prefWidth="124.0" />
+                        <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" maxWidth="588.0" minWidth="10.0" prefWidth="123.0" />
+                        <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" maxWidth="588.0" minWidth="10.0" prefWidth="90.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="588.0" minWidth="10.0" prefWidth="188.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="588.0" minWidth="10.0" prefWidth="33.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints maxHeight="168.0" minHeight="0.0" prefHeight="36.0" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="297.0" minHeight="0.0" prefHeight="39.0" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="385.0" minHeight="10.0" prefHeight="38.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="385.0" minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="385.0" minHeight="10.0" prefHeight="34.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="385.0" minHeight="10.0" prefHeight="43.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="385.0" minHeight="10.0" prefHeight="46.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="385.0" minHeight="10.0" prefHeight="219.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="385.0" minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Label alignment="CENTER_RIGHT" text="Location :" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Label text="Date :" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <DatePicker fx:id="date" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                        <Label text="Race Name :" GridPane.columnIndex="1" />
+                        <TextField fx:id="racetxt" GridPane.columnIndex="2" />
+                        <Label text="Race Type :" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <Label text="Start Time :" GridPane.columnIndex="6" />
+                        <Label text="End Time :" GridPane.columnIndex="6" GridPane.rowIndex="1" />
+                        <TextField fx:id="starttxt" GridPane.columnIndex="7" />
+                        <TextField fx:id="endtxt" GridPane.columnIndex="7" GridPane.rowIndex="1" />
+                        <ComboBox fx:id="typebox" onAction="#type" prefWidth="150.0" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                        <Label text="Track Length :" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                        <TextField fx:id="tracktxt" prefHeight="25.0" prefWidth="137.0" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                        <Label text="Lap Count :" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                        <TextField fx:id="laptxt" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+                        <Label text="Track Logo :" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                        <TextField fx:id="imgtxt1" prefHeight="25.0" prefWidth="145.0" promptText="Img File" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+                        <Button fx:id="filebtn" mnemonicParsing="false" onAction="#fileklik" text="Select Image" GridPane.columnIndex="4" GridPane.rowIndex="6" />
+                        <Button fx:id="finishbtn" mnemonicParsing="false" onAction="#finishklik" text="Finish" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="7" GridPane.valignment="BOTTOM" />
+                        <Button fx:id="resetbtn" mnemonicParsing="false" onAction="#resetklik" text="Reset" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.rowIndex="7" GridPane.valignment="BOTTOM" />
+                        <Label text="ID :" GridPane.columnIndex="6" GridPane.rowIndex="2" />
+                        <TextField fx:id="idtxt" GridPane.columnIndex="7" GridPane.rowIndex="2" />
+                        <ComboBox fx:id="locbtn1" prefWidth="150.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                     </children>
+                  </GridPane>
+               </content></Tab>
+          <Tab fx:id="updatetab" onSelectionChanged="#updatetabklik" text="Update">
+               <content>
+                  <GridPane>
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <GridPane alignment="CENTER" GridPane.halignment="CENTER">
+                           <children>
+                              <Label alignment="CENTER_RIGHT" text="Location :" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <Label text="Date :" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <DatePicker fx:id="date2" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                              <Label text="Race Name :" GridPane.columnIndex="1" />
+                              <TextField fx:id="racetxt2" GridPane.columnIndex="2" />
+                              <Label text="Race Type :" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                              <Label text="Start Time :" GridPane.columnIndex="6" />
+                              <Label text="End Time :" GridPane.columnIndex="6" GridPane.rowIndex="1" />
+                              <TextField fx:id="starttxt2" GridPane.columnIndex="7" />
+                              <TextField fx:id="endtxt2" GridPane.columnIndex="7" GridPane.rowIndex="1" />
+                              <ComboBox fx:id="typebox2" onAction="#type" prefWidth="150.0" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                              <Label text="Track Length :" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                              <TextField fx:id="tracktxt2" prefHeight="25.0" prefWidth="137.0" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                              <Label text="Lap Count :" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                              <TextField fx:id="laptxt2" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+                              <Label text="Track Logo :" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                              <TextField fx:id="imgtxt2" prefHeight="25.0" prefWidth="145.0" promptText="Img File" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+                              <Button fx:id="filebtn2" mnemonicParsing="false" onAction="#fileklik" text="Select Image" GridPane.columnIndex="4" GridPane.rowIndex="6" />
+                              <Button fx:id="updatebtn" mnemonicParsing="false" onAction="#updateklik" text="Update" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="7" GridPane.valignment="BOTTOM" />
+                              <Button fx:id="resetbtn" mnemonicParsing="false" onAction="#resetklik" text="Reset" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.rowIndex="7" GridPane.valignment="BOTTOM" />
+                              <ComboBox fx:id="locbtn2" prefWidth="150.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                           </children>
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="356.0" minWidth="10.0" prefWidth="15.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="356.0" minWidth="10.0" prefWidth="98.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="588.0" minWidth="10.0" prefWidth="177.0" />
+                              <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" maxWidth="588.0" minWidth="8.0" prefWidth="13.0" />
+                              <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" maxWidth="588.0" minWidth="10.0" prefWidth="106.0" />
+                              <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" maxWidth="588.0" minWidth="10.0" prefWidth="109.0" />
+                              <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" maxWidth="588.0" minWidth="10.0" prefWidth="76.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="588.0" minWidth="10.0" prefWidth="188.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="588.0" minWidth="10.0" prefWidth="33.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints maxHeight="168.0" minHeight="0.0" prefHeight="36.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="297.0" minHeight="0.0" prefHeight="39.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="385.0" minHeight="10.0" prefHeight="41.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="385.0" minHeight="10.0" prefHeight="38.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="385.0" minHeight="10.0" prefHeight="41.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="385.0" minHeight="10.0" prefHeight="42.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="385.0" minHeight="10.0" prefHeight="47.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="385.0" minHeight="10.0" prefHeight="211.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="385.0" minHeight="10.0" prefHeight="33.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                        </GridPane>
+                     </children>
+                  </GridPane>
+               </content></Tab>
+            <Tab fx:id="deltab" onSelectionChanged="#deltabklik" text="Delete">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="deltbv" onMouseClicked="#selectdelklik" prefHeight="386.0" prefWidth="777.0">
+                           <columns>
+                              <TableColumn fx:id="idv1" prefWidth="38.0" text="Id" />
+                              <TableColumn fx:id="rnv1" prefWidth="128.0" text="Race Name" />
+                              <TableColumn fx:id="lv1" prefWidth="106.0" text="Location" />
+                              <TableColumn fx:id="rtv1" prefWidth="92.0" text="Race Type" />
+                              <TableColumn fx:id="dv1" prefWidth="54.0" text="Date" />
+                              <TableColumn fx:id="lcv1" prefWidth="69.0" text="Lap Count" />
+                              <TableColumn fx:id="llv1" prefWidth="74.0" text="Length" />
+                              <TableColumn fx:id="stv1" prefWidth="96.0" text="Start Time" />
+                              <TableColumn fx:id="etv1" prefWidth="99.0" text="End Time" />
+                           </columns>
+                        </TableView>
+                        <Button fx:id="delbtn" layoutX="14.0" layoutY="396.0" mnemonicParsing="false" onAction="#delklik" text="Delete" />
+                     </children></AnchorPane>
+              </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+      <Label layoutX="186.0" layoutY="28.0" text="Sistem Penjadwalan Otomatis F1">
+         <font>
+            <Font name="Bookman Old Style" size="25.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
